@@ -11,7 +11,6 @@ License:	PHP License
 URL:		http://www.php.net/download-docs.php
 Source:		http://fr2.php.net/distributions/manual/php_manual_en.tar.gz
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-root
 
 %description
 The PHP Manual in the English (en) language.
