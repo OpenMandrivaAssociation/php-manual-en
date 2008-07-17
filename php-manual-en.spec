@@ -4,14 +4,14 @@
 
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
-Version:	5.2.4
+Version:	5.2.6
 Release:	%mkrel 1
 Group:		Books/Other
 License:	PHP License
 URL:		http://www.php.net/download-docs.php
 Source:		http://fr2.php.net/distributions/manual/php_manual_en.tar.gz
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The PHP Manual in the English (en) language.
@@ -30,7 +30,7 @@ for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type 
 done
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot} 
+rm -rf %{buildroot} 
 
 install -d %{buildroot}/var/www/html/addon-modules
 pushd %{buildroot}/var/www/html/addon-modules
@@ -40,7 +40,7 @@ popd
 find | sed 's/^/%doc /' | grep -v '\./%{name}.filelist' > %{name}.filelist
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files -f %{name}.filelist
 %defattr(-,root,root)
