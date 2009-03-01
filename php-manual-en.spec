@@ -5,7 +5,7 @@
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
 Version:	5.2.9
-Release:	%mkrel 0.0.RC2.1
+Release:	%mkrel 1
 Group:		Books/Other
 License:	PHP License
 URL:		http://www.php.net/download-docs.php
