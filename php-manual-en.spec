@@ -5,14 +5,13 @@
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
 Version:	5.4.4
-Release:	%mkrel 1
+Release:	2
 Group:		Books/Other
 License:	PHP License
 URL:		http://www.php.net/download-docs.php
 Source:		http://fr2.php.net/distributions/manual/php_manual_en.tar.gz
 Requires:       apache-mod_php
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The PHP Manual in the English (en) language.
@@ -31,8 +30,6 @@ for i in `find . -type d -name CVS` `find . -type f -name .cvs\*` `find . -type 
 done
 
 %install
-rm -rf %{buildroot}
-
 install -d %{buildroot}%{_docdir}/%{name}
 cp -aRf php-chunked-xhtml/* %{buildroot}%{_docdir}/%{name}/
 
@@ -41,8 +38,7 @@ cat > %{buildroot}%{webappconfdir}/%{name}.conf << EOF
 Alias /%{name} %{_docdir}/%{name}
 
 <Directory %{_docdir}/%{name}>
-    Order Allow,Deny
-    Allow from All
+    Require all granted
 </Directory>
 EOF
 
@@ -65,11 +61,7 @@ StartupNotify=true
 Categories=Documentation;
 EOF
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %dir %{_docdir}/%{name}
 %doc %{_docdir}/%{name}/*
 %config(noreplace) %{webappconfdir}/%{name}.conf
