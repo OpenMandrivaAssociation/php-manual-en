@@ -5,7 +5,7 @@
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
 Version:	5.4.4
-Release:	2
+Release:	3
 Group:		Books/Other
 License:	PHP License
 URL:		http://www.php.net/download-docs.php
@@ -33,8 +33,8 @@ done
 install -d %{buildroot}%{_docdir}/%{name}
 cp -aRf php-chunked-xhtml/* %{buildroot}%{_docdir}/%{name}/
 
-install -d %{buildroot}%{webappconfdir}
-cat > %{buildroot}%{webappconfdir}/%{name}.conf << EOF
+install -d %{buildroot}%{_webappconfdir}
+cat > %{buildroot}%{_webappconfdir}/%{name}.conf << EOF
 Alias /%{name} %{_docdir}/%{name}
 
 <Directory %{_docdir}/%{name}>
@@ -64,7 +64,7 @@ EOF
 %files
 %dir %{_docdir}/%{name}
 %doc %{_docdir}/%{name}/*
-%config(noreplace) %{webappconfdir}/%{name}.conf
+%config(noreplace) %{_webappconfdir}/%{name}.conf
 %config(noreplace) %{_sysconfdir}/php.d/%{name}.ini
 %{_datadir}/applications/%{name}.desktop
 
