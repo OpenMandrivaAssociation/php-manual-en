@@ -4,7 +4,7 @@
 
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
-Version:	5.4.11
+Version:	5.5.6
 Release:	1
 Group:		Books/Other
 License:	PHP License
@@ -177,5 +177,6 @@ EOF
 
 * Tue Nov 16 2004 Oden Eriksson <oeriksson@mandrakesoft.com> 4.3.9-1mdk
 - initial mandrake package
+
 
 
