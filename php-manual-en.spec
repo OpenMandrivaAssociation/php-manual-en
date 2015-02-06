@@ -5,7 +5,7 @@
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
 Version:	5.5.7
-Release:	1
+Release:	2
 Group:		Books/Other
 License:	PHP License
 URL:		http://www.php.net/download-docs.php
