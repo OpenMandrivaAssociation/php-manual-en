@@ -8,7 +8,7 @@ Version:	5.5.7
 Release:	2
 Group:		Books/Other
 License:	PHP License
-URL:		http://www.php.net/download-docs.php
+URL:		https://www.php.net/download-docs.php
 Source:		http://fr2.php.net/distributions/manual/php_manual_en.tar.gz
 Requires:       apache-mod_php
 BuildArch:	noarch
