@@ -4,8 +4,8 @@
 
 Summary:	The PHP Manual in the English language
 Name:		php-manual-en
-Version:	5.5.7
-Release:	2
+Version:	20250109
+Release:	1
 Group:		Books/Other
 License:	PHP License
 URL:		https://www.php.net/download-docs.php
@@ -18,7 +18,7 @@ The PHP Manual in the English (en) language.
 
 %prep
 
-%setup -q -c -n php_manual_en
+%setup -q -c -n php-chunked-xhtml
 
 # fix perms
 find . -type d -exec chmod 755 {} \;
